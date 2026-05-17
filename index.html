@@ -20,8 +20,12 @@
         content="Answer a few simple questions to get a $750 reward towards Costco. Shop, play, and earn rewards with UP LevelRewards.">
     <meta name="twitter:image" content="https://your-domain.com/twitter-image.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
-<!-- Google tag (gtag.js) -->
+
+
+    <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-P19H4XVLBW"></script>
+
+
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -29,6 +33,12 @@
 
   gtag('config', 'G-P19H4XVLBW');
 </script>
+
+
+<!-- Load script with defer -->
+  <script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+
 </head>
 
 <body class="font-sans antialiased bg-white text-gray-900">
@@ -126,6 +136,34 @@
     <script>
         lucide.createIcons();
     </script>
+    <script defer>
+document.addEventListener("DOMContentLoaded", function () {
+  
+  var duration = 1000;
+  var end = Date.now() + duration;
+
+  (function frame() {
+    confetti({
+      particleCount: 3,
+      angle: 60,
+      spread: 30,
+      origin: { x: 0 }
+    });
+
+    confetti({
+      particleCount: 6,
+      angle: 120,
+      spread: 70,
+      origin: { x: 1 }
+    });
+
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+  })();
+
+});
+</script>
 </body>
 
 </html>
